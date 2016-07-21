@@ -1,0 +1,81 @@
+<html>
+
+  <head>
+    <style>
+      * {
+        font-family: arial;
+      }
+      canvas {
+        background: #000;
+      }
+      div.options div {
+        display: inline-block;
+        padding: 5px;
+        margin: 10px 0;
+      }
+      div.options p {
+        margin: 0 0 10px 0;
+      }
+      div.options input[type='radio'] {
+        display: none;
+      }
+      div.options button {
+        display: block;
+      }
+      div.options input[type='radio']:checked + label {
+        background: #ddd;
+      }
+      div.options label:hover, div.options button:hover {
+        cursor: pointer;
+      }
+      div.options label {
+        padding: 5px;
+        border: 1px solid #ccc;
+        display: inline-block;
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
+      div.options button {
+        background: #ddd;
+        border: 1px solid #ccc;
+        padding: 5px;
+        font-size: 12px;
+      }
+      div.options div:first-child {
+        border-right: 1px solid #eee;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="mazeCanvas" width="200" height="200">
+    </canvas>
+    <div class="options">
+      <div>
+        <p>Map Size</p>
+        <input type="radio" name="mapsize" id="map-small" value="100">
+        <label for="map-small">Small</label>
+        <br>
+        <input type="radio" name="mapsize" id="map-medium" value="200">
+        <label for="map-medium">Medium</label>
+        <br>
+        <input type="radio" name="mapsize" id="map-large" value="500">
+        <label for="map-large">Large</label>
+      </div>
+      <div>
+        <p>Cell Size</p>
+        <input type="radio" name="cellsize" id="cell-small" value="10">
+        <label for="cell-small">Small</label>
+        <br>
+        <input type="radio" name="cellsize" id="cell-medium" value="20">
+        <label for="cell-medium">Medium</label>
+        <br>
+        <input type="radio" name="cellsize" id="cell-large" value="50">
+        <label for="cell-large">Large</label>
+      </div>
+      <button onclick="refreshMaze()">Create Maze</button>
+    </div>
+    <script src="maze.js"></script>
+  </body>
+
+</html>
